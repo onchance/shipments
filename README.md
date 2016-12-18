@@ -16,8 +16,8 @@ Requirements
                   - [ ] *Photograph inventory at dropoff*
                   - [ ] *Bill of lading (B/L) signed*
 - [ ] Allow user to check off the child tasks (in *italic* above)
-- [ ] Automatically check off parent tasks (in **bold** above) if all child tasks are checked
-- [ ] Categorize jobs as:
+- [x] Automatically check off parent tasks (in **bold** above) if all child tasks are checked
+- [x] Categorize jobs as:
       - Inactive — neither pickup nor dropoff are checked off
       - Active — pickup is checked off, but dropoff is not checked off 
       - Completed — both pickup and dropoff are checked off
