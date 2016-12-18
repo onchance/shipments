@@ -3,11 +3,17 @@
 <meta charset=utf-8>
 <title>Shipments</title>
 
+<main id=main></main>
+
 <script src=pouchdb.js></script>
+<script src=preact.js></script>
 
 <script src=shipments-models.js></script>
 <script src=shipments-store.js></script>
+<script src=shipments-views.js></script>
+<script src=shipments-app.js></script>
 
 <script>
   Shipments.store.load('shipments-mocks.json');
+  Shipments.render(main);
 </script>
