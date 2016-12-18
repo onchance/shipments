@@ -6,7 +6,7 @@ Shipments
 Requirements
 ---
 
-- [ ] Ingest jobs data in the format outlined below in **Data Models**
+- [x] Ingest jobs data in the format outlined below in **Data Models**
 - [ ] Display each job as a hierarchical checklist in the browser:
       - [ ] **Oil to Cushing by Christmas (Reference ID: 123456)**
             - [ ] **Pickup at 123 Main St, Springfield OK – Wed Dec 21 2:00pm**
@@ -22,7 +22,7 @@ Requirements
       - Active — pickup is checked off, but dropoff is not checked off 
       - Completed — both pickup and dropoff are checked off
 - [ ] Allow user to view filter jobs by Active, Completed, or All
-- [ ] Persist state of checklist across browser refresh
+- [x] Persist state of checklist across browser refresh
 
 
 Enhancements
