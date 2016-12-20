@@ -21,11 +21,17 @@
       const job = jobs.find(job => job.reference === jobReference);
       const stop = job && job[stopName] || null;
 
-      return h('main', null,
+      const left = stop ? '-200%' : job ? '-100%' : '0%';
+      const transition = this.initialized ? '200ms left ease-out' : '';
+
+      return h('main', {style: {left, transition}},
         h(JobsPane, {jobs: visibleJobs, focusedChild: job, path: [root], filter}),
         h(StopsPane, {job, focusedChild: stop, path: [root, jobReference]}),
         h(TasksPane, {job, stop, path: [root, jobReference, stopName]})
       );
+    }
+    componentDidMount() {
+      this.initialized = true;
     }
   }
 
@@ -225,7 +231,7 @@
 
   class TasksPane extends Component {
     get className() {
-      return 'tasks-pane focused';
+      return this.disabled ? 'tasks-pane focused disabled' : 'tasks-pane focused'; 
     }
     get disabled() {
       const {job, path: [root, jobReference, stopName]} = this.props;

@@ -1,0 +1,131 @@
+body {
+  margin: 0 auto;
+  max-width: 30em;
+  font-family: sans-serif;
+  cursor: default;
+}
+
+main {
+  display: block;
+  position: relative;
+  left: 0%;
+  width: 100%;
+}
+
+section {
+  display: block;
+  position: absolute;
+  width: 94%;
+  margin: 3%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-out;
+}
+section.focused {
+  opacity: 1;
+}
+section + section {
+  left: 100%;
+}
+section + section + section {
+  left: 200%;
+}
+
+header {
+  border-radius: 3px;
+}
+header.navigate-up:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+header.navigate-up:active {
+  background-color: #ccc;
+}
+header.navigate-up:before {
+  content: "⟨";
+  margin-left: 0.8em;
+  margin-right: 0.5em;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+h2 {
+  display: inline-block;
+  margin: 0.4em 0;
+  font-size: 120%;
+}
+button {
+  background: transparent;
+  padding: 0.4em 0.8em;
+  margin: 0;
+  border: solid 2px #bbb;
+  font-size: 90%;
+}
+button.focused,
+button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+button:active {
+  background-color: #ccc;
+  color: inherit;
+}
+button + button {
+  border-left: 0;
+}
+button:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  margin-left: 1em;
+}
+button:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-right: 1em;
+}
+ul {
+  padding: 0;
+}
+li {
+  position: relative;
+  padding: 0.5em 0.8em 0.5em 2.4em;
+  border-radius: 3px;
+  list-style: none;
+}
+li:hover,
+li:hover * {
+  background-color: #ddd;
+  cursor: pointer;
+}
+li:active,
+li:active * {
+  background-color: #ccc;
+}
+li input {
+  position: absolute;
+  left: 0.8em;
+  margin-right: 0.5em;
+}
+li h3 {
+  margin: 0;
+  font-size: 100%;
+}
+li span {
+  color: #555;
+}
+li address {
+  display: block;
+  font-style: normal;
+}
+li time {
+  display: block;
+}
+
+.disabled li:hover,
+.disabled li:hover *,
+.disabled li:active,
+.disabled li:active * {
+  background-color: inherit;
+  cursor: inherit;
+}
