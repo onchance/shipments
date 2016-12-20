@@ -8,19 +8,19 @@ Requirements
 
 - [x] Ingest jobs data in the format outlined below in **Data Models**
 - [x] Display each job as a hierarchical checklist in the browser:
-      - [ ] **Oil to Cushing by Christmas (Reference ID: 123456)**
-            - [ ] **Pickup at 123 Main St, Springfield OK – Wed Dec 21 2:00pm**
-                  - [ ] *Photograph inventory at pickup*
-                  - [ ] *Bill of lading (B/L) received*
-            - [ ] **Dropoff at 123 Main St, Cushing OK – Fri Dec 21 10:00am**
-                  - [ ] *Photograph inventory at dropoff*
-                  - [ ] *Bill of lading (B/L) signed*
+    - [ ] **Oil to Cushing by Christmas (Reference ID: 123456)**
+        - [ ] **Pickup at 123 Main St, Springfield OK – Wed Dec 21 2:00pm**
+            - [ ] *Photograph inventory at pickup*
+            - [ ] *Bill of lading (B/L) received*
+        - [ ] **Dropoff at 123 Main St, Cushing OK – Fri Dec 21 10:00am**
+            - [ ] *Photograph inventory at dropoff*
+            - [ ] *Bill of lading (B/L) signed*
 - [x] Allow user to check off the child tasks (in *italic* above)
 - [x] Automatically check off parent tasks (in **bold** above) if all child tasks are checked
 - [x] Categorize jobs as:
-      - Inactive — neither pickup nor dropoff are checked off
-      - Active — pickup is checked off, but dropoff is not checked off 
-      - Completed — both pickup and dropoff are checked off
+    - Inactive — neither pickup nor dropoff are checked off
+    - Active — pickup is checked off, but dropoff is not checked off 
+    - Completed — both pickup and dropoff are checked off
 - [x] Allow user to view filter jobs by Active, Completed, or All
 - [x] Persist state of checklist across browser refresh
 
@@ -97,7 +97,7 @@ Shipments State
 {
   "address": "{string}",
   "description": "{string}",
-  "time": "{Date}"
+  "time": "{Date}",
   "inventory": "{TaskState}",
   "lading": "{TaskState}"
 }
