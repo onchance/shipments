@@ -294,12 +294,14 @@
     get onChange() {
       const {stop, task, path} = this.props;
       return function (event) {
-        task.complete(event.target.checked);
-        if (stop.completed) {
-          store.patch({focus: path.slice(0, 2)});
-        } else {
-          store.patch();
-        }
+        task.complete(event.target.checked)
+          .then(task => {
+            if (stop.completed) {
+              store.patch({focus: path.slice(0, 2)});
+            } else {
+              store.patch();
+            }
+          });
       };
     }
 

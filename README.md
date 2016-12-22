@@ -28,7 +28,7 @@ Requirements
 Enhancements
 ---
 
-- [ ] Record the time and GPS location of the user when marking a task as complete
+- [x] Record the time and GPS location of the user when marking a task as complete
 - [ ] Allow user to upload a photo as part of the "photograph inventory" task
 - [ ] Display estimated travel time to pickup or dropoff address
 - [ ] Display map with directions to pickup or dropoff address

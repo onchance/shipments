@@ -161,14 +161,14 @@
     }
 
     get time() {
-      return this.__private__.time;
+      return this.__private__.time || null;
     }
     set time(string) {
       this.__private__.time = string ? new Date(string) : null;
     }
 
     get photo() {
-      return this.__private__.photo;
+      return this.__private__.photo || null;
     }
     set photo(object) {
       this.__private__.photo = object ? new Upload(object) : null;
@@ -186,8 +186,24 @@
     complete(completed) {
       if (completed) {
         this.time = Date.now();
+        this.position = null;
+        return new Promise(resolve => {
+          navigator.geolocation.getCurrentPosition(
+            position => {
+              this.position = position;
+              resolve(this);
+            },
+            error => {
+              console.warn(error);
+              resolve(this);
+            },
+            {timeout: 100, maximumAge: Infinity}
+          );
+        });
       } else {
         this.time = null;
+        this.position = null;
+        return Promise.resolve(this);
       }
     }
   }
@@ -254,6 +270,24 @@
     COMPLETED: 'completed',
     ALL: null,
   };
+
+
+  //
+  // Utilities
+  //
+
+  var MINUTE = 60000;
+
+  function refreshGeolocationCache() {
+    navigator.geolocation.getCurrentPosition(
+      success => success,
+      error => error,
+      {timeout: 1 * MINUTE}
+    );
+  }
+
+  setInterval(refreshGeolocationCache, 5 * MINUTE);
+  refreshGeolocationCache();
 
 
   //
